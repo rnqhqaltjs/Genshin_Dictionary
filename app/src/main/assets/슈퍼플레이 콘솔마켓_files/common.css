@@ -1,0 +1,163 @@
+@charset "UTF-8";
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+input,
+textarea,
+button,
+select {
+  margin: 0;
+  padding: 0;
+}
+body,
+input,
+textarea,
+select,
+button,
+table {
+  font-family: -apple-system, BlinkMacSystemFont, helvetica, AppleSDGothicNeo, sans-serif;
+  font-size: 14px;
+  line-height: 1.25em;
+}
+body {
+  position: relative;
+  width: 100%;
+  -webkit-text-size-adjust: none;
+}
+#wrap {
+  position: relative;
+  margin-left: env(safe-area-inset-left);
+  margin-right: env(safe-area-inset-right);
+  background-color: #e9ecef;
+}
+img,
+fieldset {
+  border: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+em,
+address {
+  font-style: normal;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+a:active {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+table {
+  border-collapse: collapse;
+}
+hr {
+  display: none !important;
+}
+button {
+  border: 0 none;
+  background: transparent;
+  outline: none;
+}
+.blind,
+.u_skip {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+.dimmed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2001;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.eg-flick-container {
+  height: 100%;
+}
+.eg-flick-panel {
+  height: 100%;
+}
+.eg-flick-panel:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+/* SE 3.0 이하 대응 */
+.se_smartstore_wrap .editor_wrap {
+
+  /*
+     * padding 축약형을 사용하지 않은 이유
+     * packages/share/src/common/components/Editor/index.tsx 에서
+     * padding overriding 이슈를 막기 위해 (방어코드)
+     */
+  padding-top: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  background-color: #ffffff;
+  font-size: 17px !important;
+  line-height: 24px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.se_smartstore_wrap .se_body_wrap {
+  margin: 0 -15px;
+}
+.se_smartstore_wrap .editor_wrap.previous_version img {
+  max-width: 100%;
+  height: auto !important;
+  vertical-align: top;
+}
+.se_smartstore_wrap .editor_wrap.previous_version ol {
+  list-style: decimal;
+  padding-left: 20px;
+}
+.se_smartstore_wrap .editor_wrap.previous_version ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+.se_smartstore_wrap .editor_wrap .se_imageStrip .se_mediaArea {
+  font-size: 0 !important;
+}
+
+/* /지도영역 폰트사이즈 재선언 */
+.se_smartstore_wrap .editor_wrap .se_component.se_map .se_map_link {
+  font-size: 0 !important;
+}
+.se_smartstore_wrap .editor_wrap .se_component.se_map.default .se_info_btn .btn_tel {
+  font-size: 12px !important;
+}
+.se_smartstore_wrap .editor_wrap .se_component.se_map.default .se_title_area .se_title {
+  font-size: 16px !important;
+}
+.se_smartstore_wrap .editor_wrap .se_component.se_map .se_address {
+  font-size: 13px !important;
+}

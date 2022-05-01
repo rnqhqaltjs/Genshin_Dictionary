@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "398543538432",
+    "project_id": "genshindictionary-439f8",
+    "storage_bucket": "genshindictionary-439f8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398543538432:android:86c6bb5fd26afef4008be5",
+        "android_client_info": {
+          "package_name": "com.example.genshin_dictionary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398543538432-ggkvrtolso0jf2pvbkib5nihfvbh4d14.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqNvlxlaOE8I8g9NLR7yPMWuFOGZEbQh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398543538432-ggkvrtolso0jf2pvbkib5nihfvbh4d14.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".character.HeroFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.gridlayout.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp">
+
+
+            <ImageView
+                android:id="@+id/qeching"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borderline"
+                android:src="@drawable/qeching"
+                app:layout_column="0"
+                app:layout_row="0" />
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="각청"
+                app:layout_column="0"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="2" />
+
+            <ImageView
+                android:id="@+id/raiden"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borderline"
+                android:src="@drawable/raiden"
+                app:layout_column="1"
+                app:layout_row="0" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="라이덴 쇼군"
+                app:layout_column="1"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★★★★★"
+                app:layout_column="0"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="1"
+                android:textColor="#FFBD1B"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★★★★★"
+                app:layout_column="1"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="1"
+                android:textColor="#FFBD1B"/>
+
+            <ImageView
+                android:id="@+id/miko"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borderline"
+                android:src="@drawable/miko"
+                app:layout_column="2"
+                app:layout_row="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="야에 미코"
+                app:layout_column="2"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★★★★★"
+                android:textColor="#FFBD1B"
+                app:layout_column="2"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="1" />
+
+            <ImageView
+                android:id="@+id/risa"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borderline"
+                android:src="@drawable/risa"
+                app:layout_column="0"
+                app:layout_row="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="리사"
+                app:layout_column="0"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★★★★"
+                android:textColor="#FFBD1B"
+                app:layout_column="0"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="4" />
+
+            <ImageView
+                android:id="@+id/beidou"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borderline"
+                android:src="@drawable/beidou"
+                app:layout_column="2"
+                app:layout_row="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="북두"
+                app:layout_column="2"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★★★★"
+                app:layout_column="2"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="4"
+                android:textColor="#FFBD1B"/>
+
+            <ImageView
+                android:id="@+id/razer"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borderline"
+                android:src="@drawable/razer"
+                app:layout_column="1"
+                app:layout_row="3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="레이저"
+                app:layout_column="1"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="5" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★★★★"
+                app:layout_column="1"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="4"
+                android:textColor="#FFBD1B"/>
+
+            <ImageView
+                android:id="@+id/sara"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borderline"
+                android:src="@drawable/sara"
+                app:layout_column="1"
+                app:layout_row="6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="쿠죠 사라"
+                app:layout_column="1"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="8" />
+
+            <ImageView
+                android:id="@+id/fishl"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/borderline"
+                android:src="@drawable/fishl"
+                app:layout_column="0"
+                app:layout_row="6" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★★★★"
+                app:layout_column="1"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="7"
+                android:textColor="#FFBD1B"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="피슬"
+                app:layout_column="0"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="8" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="★★★★"
+                app:layout_column="0"
+                app:layout_gravity="center_horizontal"
+                app:layout_row="7"
+                android:textColor="#FFBD1B"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="10dp"
+                app:layout_column="1"
+                app:layout_row="11" />
+
+        </androidx.gridlayout.widget.GridLayout>
+
+    </FrameLayout>
+
+</ScrollView>
