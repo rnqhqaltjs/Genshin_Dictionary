@@ -13,7 +13,7 @@
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/activity_board_write.xml" value="0.5053449951409135" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/activity_content_list.xml" value="0.25226449275362317" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/activity_content_show.xml" value="0.2441123188405797" />
-        <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/activity_intro.xml" value="0.1" />
+        <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/activity_intro.xml" value="0.264" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/activity_join.xml" value="0.25625" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/activity_main.xml" value="0.2" />
@@ -31,7 +31,7 @@
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_com.xml" value="0.176" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_fire.xml" value="0.4" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_hero.xml" value="0.4" />
-        <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_home.xml" value="0.4" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_ice.xml" value="0.4" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_info.xml" value="0.4" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_lightning.xml" value="0.6" />
@@ -39,6 +39,7 @@
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_store.xml" value="0.4" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_water.xml" value="0.48417132216014896" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/fragment_wind.xml" value="0.264" />
+        <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/home_rv_item.xml" value="0.536" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/layout/navi_header.xml" value="0.20380434782608695" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/menu/menu_main.xml" value="0.26974358974358975" />
         <entry key="..\:/Users/Kim SeungWu/Documents/AndroidLab/Genshin_Dictionary/app/src/main/res/menu/navi_menu.xml" value="0.2708333333333333" />

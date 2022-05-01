@@ -85,12 +85,13 @@ class MainActivity : AppCompatActivity() {
 
         if(toggle.onOptionsItemSelected(item)){
 
+            findViewById<TextView>(R.id.tv_name).text="$email 님"
+
             if(email == "") {
 
-                findViewById<TextView>(R.id.tv_name).text="guest 님"
-            } else {
-                findViewById<TextView>(R.id.tv_name).text="$email 님"
+                findViewById<TextView>(R.id.tv_name).text = "Guest 님"
             }
+
 
 
             return true

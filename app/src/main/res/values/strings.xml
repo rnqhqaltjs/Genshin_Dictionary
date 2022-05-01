@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Genshin_Dictionary</string>
+    <string name="app_name">원신 백과사전</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="drawer_opened">Open</string>
