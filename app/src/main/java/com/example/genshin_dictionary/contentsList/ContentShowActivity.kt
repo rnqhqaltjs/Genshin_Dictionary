@@ -1,5 +1,6 @@
 package com.example.genshin_dictionary.contentsList
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ class ContentShowActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityContentShowBinding
 
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,6 +23,8 @@ class ContentShowActivity : AppCompatActivity() {
         val getUrl = intent.getStringExtra("url")
 
         val webView : WebView = binding.webView
+        webView.settings.javaScriptEnabled = true
+        webView.settings.domStorageEnabled = true
         webView.loadUrl(getUrl.toString())
     }
 }

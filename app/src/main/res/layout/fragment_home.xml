@@ -220,7 +220,7 @@
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/comRV"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"/>
+                    android:layout_height="150dp" />
             </LinearLayout>
 
             <EditText

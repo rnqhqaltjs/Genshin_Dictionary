@@ -70,6 +70,7 @@ class CommentRVAdapter(val context: Context, val items:MutableList<CommentModel>
                     FBRef.commentRef.child(keys[position]).removeValue()
                     Toast.makeText(context,"댓글 삭제 완료", Toast.LENGTH_SHORT).show()
                     (context as Activity).finish()
+
                 }
 
                 builder.show()
