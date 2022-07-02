@@ -95,6 +95,12 @@ class MainActivity : AppCompatActivity() {
 
             }
 
+            if(findViewById<TextView>(R.id.tv_name).text == "null 님"){
+
+                findViewById<TextView>(R.id.tv_name).text = "Guest 님"
+
+            }
+
             return true
         }
 
