@@ -34,11 +34,6 @@ class BookmarkFragment : Fragment() {
 
     lateinit var rvAdapter: BookmarkRVAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -74,6 +69,10 @@ class BookmarkFragment : Fragment() {
 
         binding.comTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_bookmarkFragment_to_comFragment)
+
+        }
+
+        binding.bookmarkTap.setOnClickListener {
 
         }
 

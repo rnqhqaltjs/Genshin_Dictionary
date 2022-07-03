@@ -34,16 +34,10 @@ class ComFragment : Fragment() {
 
     private lateinit var boardRVAdapter: BoardRVAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentComBinding.inflate(inflater,container,false)
 
         (activity as AppCompatActivity).supportActionBar?.title = "커뮤니티"
@@ -71,6 +65,10 @@ class ComFragment : Fragment() {
 
         binding.infoTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_comFragment_to_infoFragment)
+
+        }
+
+        binding.comTap.setOnClickListener {
 
         }
 

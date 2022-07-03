@@ -1,29 +1,24 @@
 package com.example.genshin_dictionary.fragments
 
-import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.genshin_dictionary.LoadingDialog
 import com.example.genshin_dictionary.R
 import com.example.genshin_dictionary.board.BoardModel
-import com.example.genshin_dictionary.board.BoardRVAdapter
 import com.example.genshin_dictionary.board.HomeRVAdapter
 import com.example.genshin_dictionary.contentsList.BookmarkRVAdapter
 import com.example.genshin_dictionary.contentsList.ContentListActivity
 import com.example.genshin_dictionary.contentsList.ContentModel
-import com.example.genshin_dictionary.databinding.ActivityMainBinding
 import com.example.genshin_dictionary.databinding.FragmentHomeBinding
 import com.example.genshin_dictionary.utils.FBAuth
 import com.example.genshin_dictionary.utils.FBRef
@@ -34,7 +29,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-
+import android.content.SharedPreferences
+import android.app.Activity
 
 class HomeFragment : Fragment() {
 
@@ -52,18 +48,27 @@ class HomeFragment : Fragment() {
     lateinit var rvAdapter: BookmarkRVAdapter
     lateinit var boardRVAdapter: HomeRVAdapter
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         binding = FragmentHomeBinding.inflate(inflater,container,false)
 
         (activity as AppCompatActivity).supportActionBar?.title = "홈"
 
-        showLoadingDialog()
+        val pref: SharedPreferences? = context?.getSharedPreferences("isFirst", Activity.MODE_PRIVATE)
+        val first = pref?.getBoolean("isFirst", false)
+        if (first == false) {
+            Log.d("Is first Time?", "first")
+            val editor = pref.edit()
+            editor.putBoolean("isFirst", true)
+            editor.apply()
+
+            showLoadingDialog()
+
+        }
+
 
         binding.mainIconAll.setOnClickListener {
 
@@ -166,6 +171,17 @@ class HomeFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+
+        val pref: SharedPreferences? = context?.getSharedPreferences("isFirst", Activity.MODE_PRIVATE)
+        val editor = pref?.edit()
+
+        editor?.putBoolean("isFirst", false)
+        editor?.apply()
+
+    }
+
     private fun getCategoryData(){
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -189,7 +205,9 @@ class HomeFragment : Fragment() {
                 // Getting Post failed, log a message
                 Log.w("ContentListActivity", "loadPost:onCancelled", databaseError.toException())
             }
+
         }
+
         FBRef.category_all.addValueEventListener(postListener)
         FBRef.category_newbie.addValueEventListener(postListener)
         FBRef.category_battle.addValueEventListener(postListener)
@@ -198,7 +216,6 @@ class HomeFragment : Fragment() {
         FBRef.category_arc.addValueEventListener(postListener)
         FBRef.category_tip.addValueEventListener(postListener)
         FBRef.category_etc.addValueEventListener(postListener)
-
 
     }
 
@@ -262,7 +279,7 @@ class HomeFragment : Fragment() {
         val dialog = LoadingDialog(requireContext())
         CoroutineScope(Main).launch {
             dialog.show()
-            delay(2000)
+            delay(1500)
             dialog.dismiss()
         }
     }

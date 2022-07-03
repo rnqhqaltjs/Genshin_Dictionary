@@ -56,6 +56,10 @@ class StoreFragment : Fragment() {
 
         }
 
+        binding.shopTap.setOnClickListener{
+
+        }
+
 
 
         return binding.root

@@ -20,15 +20,10 @@ class InfoFragment : Fragment() {
 
     private lateinit var binding: FragmentInfoBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentInfoBinding.inflate(inflater,container,false)
 
         (activity as AppCompatActivity).supportActionBar?.title = "팁과 정보"
@@ -90,6 +85,10 @@ class InfoFragment : Fragment() {
 
         binding.charTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_infoFragment_to_charFragment)
+
+        }
+
+        binding.infoTap.setOnClickListener {
 
         }
 

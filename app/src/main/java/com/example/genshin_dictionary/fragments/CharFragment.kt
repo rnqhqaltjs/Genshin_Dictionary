@@ -25,11 +25,6 @@ class CharFragment : Fragment() {
     private lateinit var viewPager: ViewPager2
     private lateinit var tabLayout: TabLayout
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,6 +38,10 @@ class CharFragment : Fragment() {
 
         binding.homeTap.setOnClickListener {
             it.findNavController().navigate(R.id.action_charFragment_to_homeFragment)
+        }
+
+        binding.charTap.setOnClickListener {
+
         }
 
         binding.infoTap.setOnClickListener {
