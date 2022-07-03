@@ -40,7 +40,7 @@ class BoardWriteActivity : AppCompatActivity() {
 
             Toast.makeText(this,"부적절한 게시글일 경우 삭제될 수 있습니다.", Toast.LENGTH_LONG).show()
 
-            if(isImageUpload==true){
+            if(isImageUpload){
                 imageUpload(key)
             }
 
@@ -49,10 +49,10 @@ class BoardWriteActivity : AppCompatActivity() {
         }
 
         binding.imageArea.setOnClickListener {
+
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery,10)
             isImageUpload =true
-
 
         }
 
@@ -73,7 +73,7 @@ class BoardWriteActivity : AppCompatActivity() {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos)
         val data = baos.toByteArray()
 
-        var uploadTask = mountainsRef.putBytes(data)
+        val uploadTask = mountainsRef.putBytes(data)
         uploadTask.addOnFailureListener {
             // Handle unsuccessful uploads
         }.addOnSuccessListener { taskSnapshot ->

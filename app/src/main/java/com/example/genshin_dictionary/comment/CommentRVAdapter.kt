@@ -45,11 +45,9 @@ class CommentRVAdapter(val context: Context, val items:MutableList<CommentModel>
             val myUid = FBAuth.getUid()
             val writerUid = items[position].commentUid
 
-            if(myUid.equals(writerUid)){
+            if(myUid == writerUid){
 
                 binding.deleteIcon.isVisible = true
-
-            } else{
 
             }
 
