@@ -16,6 +16,10 @@ import com.example.genshin_dictionary.utils.FBAuth
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import android.app.ProgressDialog
+
+
+
 
 class MainActivity : AppCompatActivity() {
 

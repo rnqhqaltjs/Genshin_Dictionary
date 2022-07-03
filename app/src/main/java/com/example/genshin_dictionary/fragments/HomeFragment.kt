@@ -1,5 +1,6 @@
 package com.example.genshin_dictionary.fragments
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +15,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.genshin_dictionary.LoadingDialog
 import com.example.genshin_dictionary.R
 import com.example.genshin_dictionary.board.BoardModel
 import com.example.genshin_dictionary.board.BoardRVAdapter
@@ -28,6 +30,10 @@ import com.example.genshin_dictionary.utils.FBRef
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers.Main
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class HomeFragment : Fragment() {
@@ -46,9 +52,7 @@ class HomeFragment : Fragment() {
     lateinit var rvAdapter: BookmarkRVAdapter
     lateinit var boardRVAdapter: HomeRVAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -58,6 +62,8 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater,container,false)
 
         (activity as AppCompatActivity).supportActionBar?.title = "홈"
+
+        showLoadingDialog()
 
         binding.mainIconAll.setOnClickListener {
 
@@ -250,6 +256,15 @@ class HomeFragment : Fragment() {
         }
         FBRef.boardRef.addValueEventListener(postListener)
 
+    }
+
+    private fun showLoadingDialog() {
+        val dialog = LoadingDialog(requireContext())
+        CoroutineScope(Main).launch {
+            dialog.show()
+            delay(2000)
+            dialog.dismiss()
+        }
     }
 
 }
