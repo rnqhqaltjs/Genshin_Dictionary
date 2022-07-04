@@ -57,19 +57,6 @@ class HomeFragment : Fragment() {
 
         (activity as AppCompatActivity).supportActionBar?.title = "홈"
 
-        val pref: SharedPreferences? = context?.getSharedPreferences("isFirst", Activity.MODE_PRIVATE)
-        val first = pref?.getBoolean("isFirst", false)
-        if (first == false) {
-            Log.d("Is first Time?", "first")
-            val editor = pref.edit()
-            editor.putBoolean("isFirst", true)
-            editor.apply()
-
-            showLoadingDialog()
-
-        }
-
-
         binding.mainIconAll.setOnClickListener {
 
             val intent = Intent(context , ContentListActivity::class.java)
@@ -167,20 +154,9 @@ class HomeFragment : Fragment() {
         binding.comRV.adapter = boardRVAdapter
         binding.comRV.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.comRV.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
-        
+
 
         return binding.root
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-
-        val pref: SharedPreferences? = context?.getSharedPreferences("isFirst", Activity.MODE_PRIVATE)
-        val editor = pref?.edit()
-
-        editor?.putBoolean("isFirst", false)
-        editor?.apply()
-
     }
 
     private fun getCategoryData(){
@@ -221,6 +197,8 @@ class HomeFragment : Fragment() {
     }
 
     private fun getBookmarkData(){
+
+
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
@@ -244,6 +222,9 @@ class HomeFragment : Fragment() {
 
     private fun getFBBoardData(){
 
+        val dialog = LoadingDialog(requireContext())
+        dialog.show()
+
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
 
@@ -262,6 +243,7 @@ class HomeFragment : Fragment() {
                 boardKeyList.reverse()
                 boardDataList.reverse()
                 boardRVAdapter.notifyDataSetChanged()
+                dialog.dismiss()
 
                 Log.d(TAG,boardDataList.toString())
 
@@ -274,15 +256,6 @@ class HomeFragment : Fragment() {
         }
         FBRef.boardRef.addValueEventListener(postListener)
 
-    }
-
-    private fun showLoadingDialog() {
-        val dialog = LoadingDialog(requireContext())
-        CoroutineScope(Main).launch {
-            dialog.show()
-            delay(1500)
-            dialog.dismiss()
-        }
     }
 
 }

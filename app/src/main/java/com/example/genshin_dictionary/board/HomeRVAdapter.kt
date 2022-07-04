@@ -25,7 +25,7 @@ class HomeRVAdapter(val context: Context,val items:MutableList<BoardModel>,val k
 
     override fun getItemCount(): Int {
 
-        return items.size.coerceAtMost(4)
+        return items.size.coerceAtMost(8)
     }
 
     inner class Viewholder(private val binding: HomeRvItemBinding) : RecyclerView.ViewHolder(binding.root) {
