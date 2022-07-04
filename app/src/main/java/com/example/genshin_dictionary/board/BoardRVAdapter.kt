@@ -33,7 +33,13 @@ class BoardRVAdapter(val context: Context,val items:MutableList<BoardModel>,val 
 
             binding.titleArea.text = items[position].title
             binding.timeArea.text = items[position].time
-            binding.uidArea.text = items[position].uid
+            binding.emailArea.text = items[position].email
+
+            if(binding.emailArea.text == ""){
+
+                binding.emailArea.text = "익명"
+
+            }
 
             val itemLinearLayoutView = binding.BoardListView
 

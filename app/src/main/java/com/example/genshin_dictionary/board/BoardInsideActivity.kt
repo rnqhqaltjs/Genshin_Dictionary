@@ -105,7 +105,8 @@ class BoardInsideActivity : AppCompatActivity() {
                 CommentModel(
                     binding.commentArea.text.toString(),
                     FBAuth.getTime(),
-                    FBAuth.getUid()
+                    FBAuth.getUid(),
+                    FBAuth.getEmail()
                 )
             )
 
@@ -168,19 +169,23 @@ class BoardInsideActivity : AppCompatActivity() {
                     val dataModel = dataSnapshot.getValue(BoardModel::class.java)
                     dataModel!!.title?.let { Log.d(TAG, it) }
 
-                    binding.titleArea.text = dataModel!!.title
-                    binding.textArea.text = dataModel!!.content
-                    binding.timeArea.text = dataModel!!.time
-                    binding.uidArea.text = dataModel!!.uid
+                    binding.titleArea.text = dataModel.title
+                    binding.textArea.text = dataModel.content
+                    binding.timeArea.text = dataModel.time
+                    binding.emailArea.text = dataModel.email
+
+                    if(binding.emailArea.text == ""){
+
+                        binding.emailArea.text = "익명"
+
+                    }
 
                     val myUid = FBAuth.getUid()
                     val writerUid = dataModel.uid
 
-                    if(myUid.equals(writerUid)){
+                    if(myUid == writerUid){
 
                         binding.boardSettingIcon.isVisible = true
-
-                    } else{
 
                     }
 

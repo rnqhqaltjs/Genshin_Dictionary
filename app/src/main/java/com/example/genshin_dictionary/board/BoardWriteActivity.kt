@@ -31,12 +31,13 @@ class BoardWriteActivity : AppCompatActivity() {
             val content = binding.contentArea.text.toString()
             val uid = FBAuth.getUid()
             val time = FBAuth.getTime()
+            val email = FBAuth.getEmail()
 
             val key = FBRef.boardRef.push().key.toString()
 
             FBRef.boardRef
                 .child(key)
-                .setValue(BoardModel(title,content,uid,time))
+                .setValue(BoardModel(title,content,uid,time,email))
 
             Toast.makeText(this,"부적절한 게시글일 경우 삭제될 수 있습니다.", Toast.LENGTH_LONG).show()
 

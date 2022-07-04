@@ -38,9 +38,16 @@ class CommentRVAdapter(val context: Context, val items:MutableList<CommentModel>
 
             binding.titleArea.text = items[position].commentTitle
             binding.timeArea.text = items[position].commentTime
-            binding.uidArea.text = items[position].commentUid
+            binding.emailArea.text = items[position].commentEmail
+
+            if(binding.emailArea.text == ""){
+
+                binding.emailArea.text = "익명"
+
+            }
 
             val myUid = FBAuth.getUid()
+
             val writerUid = items[position].commentUid
 
             if(myUid == writerUid){
