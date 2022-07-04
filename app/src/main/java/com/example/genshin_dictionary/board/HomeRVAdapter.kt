@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.genshin_dictionary.databinding.BoardRvItemBinding
 import com.example.genshin_dictionary.databinding.HomeRvItemBinding
 import com.example.genshin_dictionary.utils.FBAuth
 
@@ -21,16 +20,17 @@ class HomeRVAdapter(val context: Context,val items:MutableList<BoardModel>,val k
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
 
-        holder.bindItems(items[position],keys[position])
+        holder.bindItems()
     }
 
     override fun getItemCount(): Int {
-        return items.size
+
+        return items.size.coerceAtMost(4)
     }
 
     inner class Viewholder(private val binding: HomeRvItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bindItems(item: BoardModel,key:String){
+        fun bindItems() {
 
             binding.titleArea.text = items[position].title
             binding.timeArea.text = items[position].time

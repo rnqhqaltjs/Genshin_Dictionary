@@ -167,6 +167,7 @@ class HomeFragment : Fragment() {
         binding.comRV.adapter = boardRVAdapter
         binding.comRV.layoutManager= LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         binding.comRV.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+        
 
         return binding.root
     }

@@ -64,7 +64,6 @@ class ContentRvAdapter(val context: Context,
                 if(bookmarkIdList.contains(key)) {
                     //북마크가 있을때 삭제
                     Toast.makeText(context,"북마크 삭제 완료",Toast.LENGTH_SHORT).show()
-                    bookmarkIdList.remove(key)
 
                     FBRef.bookmarkRef
                         .child(FBAuth.getUid())
@@ -78,8 +77,6 @@ class ContentRvAdapter(val context: Context,
                         .child(FBAuth.getUid())
                         .child(key)
                         .setValue(BookmarkModel(true))
-
-
 
                 }
 

@@ -37,7 +37,7 @@ class BookmarkFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentBookmarkBinding.inflate(inflater,container,false)
 
         (activity as AppCompatActivity).supportActionBar?.title = "북마크"
