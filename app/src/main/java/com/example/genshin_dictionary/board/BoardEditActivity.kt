@@ -64,15 +64,14 @@ class BoardEditActivity : AppCompatActivity() {
         // ImageView in your Activity
         val imageViewFromFB = binding.imageArea
 
-        storageReference.downloadUrl.addOnCompleteListener(OnCompleteListener { task->
-            if(task.isSuccessful){
+        storageReference.downloadUrl.addOnCompleteListener { task ->
+
+            if (task.isSuccessful) {
                 Glide.with(this)
                     .load(task.result)
                     .into(imageViewFromFB)
-            } else{
-
             }
-        })
+        }
     }
 
     private fun getBoardData(key: String) {

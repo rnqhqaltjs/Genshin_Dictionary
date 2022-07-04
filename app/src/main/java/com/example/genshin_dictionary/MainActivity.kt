@@ -1,7 +1,6 @@
 package com.example.genshin_dictionary
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
@@ -16,9 +15,6 @@ import com.example.genshin_dictionary.utils.FBAuth
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import android.app.ProgressDialog
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -26,9 +22,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var binding : ActivityMainBinding
     lateinit var toggle:ActionBarDrawerToggle
-    private val TAG = MainActivity::class.java.simpleName
     private val email = FBAuth.getEmail()
-    private final var FINISH_INTERVAL_TIME: Long = 2000
+    private var FINISH_INTERVAL_TIME: Long = 2000
     private var backPressedTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {

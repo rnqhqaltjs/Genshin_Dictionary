@@ -20,7 +20,7 @@ class BoardRVAdapter(val context: Context,val items:MutableList<BoardModel>,val 
 
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
 
-        holder.bindItems(items[position],keys[position])
+        holder.bindItems()
     }
 
     override fun getItemCount(): Int {
@@ -29,7 +29,7 @@ class BoardRVAdapter(val context: Context,val items:MutableList<BoardModel>,val 
 
     inner class Viewholder(private val binding: BoardRvItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bindItems(item: BoardModel,key:String){
+        fun bindItems() {
 
             binding.titleArea.text = items[position].title
             binding.timeArea.text = items[position].time
@@ -47,13 +47,7 @@ class BoardRVAdapter(val context: Context,val items:MutableList<BoardModel>,val 
                 intent.putExtra("key",keys[position])
                 binding.BoardListView.context.startActivity(intent)
 
-                val intent2= Intent(context, BoardInsideActivity::class.java)
-                intent2.putExtra("key",keys[position])
-
             }
-
-
-
 
         }
 
