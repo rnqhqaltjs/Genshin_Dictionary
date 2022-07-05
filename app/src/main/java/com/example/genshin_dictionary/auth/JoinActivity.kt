@@ -41,6 +41,11 @@ class JoinActivity : AppCompatActivity() {
                 isGoToJoin = false
             }
 
+            if (email.length<10) {
+                Toast.makeText(this, "올바른 이메일을 입력해주세요.", Toast.LENGTH_SHORT).show()
+                isGoToJoin = false
+            }
+
             if (password1.isEmpty()) {
                 Toast.makeText(this, "비밀번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
                 isGoToJoin = false
