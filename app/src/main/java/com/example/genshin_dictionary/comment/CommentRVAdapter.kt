@@ -11,6 +11,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.genshin_dictionary.databinding.CommentRvItemBinding
 import com.example.genshin_dictionary.utils.FBAuth
 import com.example.genshin_dictionary.utils.FBRef
+import android.content.Intent
+
+
+
 
 class CommentRVAdapter(val context: Context, val items:MutableList<CommentModel>,val keys:MutableList<String>)
     : RecyclerView.Adapter<CommentRVAdapter.Viewholder>(){
@@ -70,6 +74,13 @@ class CommentRVAdapter(val context: Context, val items:MutableList<CommentModel>
 
                     FBRef.commentRef.child(boardkey).child(keys[position]).removeValue()
                     Toast.makeText(context,"댓글 삭제 완료", Toast.LENGTH_SHORT).show()
+
+                    val intent = context.intent
+                    context.finish() //현재 액티비티 종료 실시
+                    context.overridePendingTransition(0, 0) //효과 없애기
+                    context.startActivity(intent) //현재 액티비티 재실행 실시
+                    context.overridePendingTransition(0, 0) //효과 없애기
+
 
                 }
 

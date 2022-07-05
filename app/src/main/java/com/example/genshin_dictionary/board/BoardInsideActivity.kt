@@ -97,21 +97,35 @@ class BoardInsideActivity : AppCompatActivity() {
 
     fun insertComment(key :String){
 
-        FBRef
-            .commentRef
-            .child(key)
-            .push()
-            .setValue(
-                CommentModel(
-                    binding.commentArea.text.toString(),
-                    FBAuth.getTime(),
-                    FBAuth.getUid(),
-                    FBAuth.getEmail()
-                )
-            )
+        if(binding.commentArea.length() == 0) {
 
-        Toast.makeText(this,"입력 완료", Toast.LENGTH_SHORT).show()
-        binding.commentArea.setText("")
+            Toast.makeText(this,"댓글을 입력해 주세요.",Toast.LENGTH_SHORT).show()
+
+        } else {
+
+            FBRef
+                .commentRef
+                .child(key)
+                .push()
+                .setValue(
+                    CommentModel(
+                        binding.commentArea.text.toString(),
+                        FBAuth.getTime(),
+                        FBAuth.getUid(),
+                        FBAuth.getEmail()
+                    )
+                )
+
+            Toast.makeText(this, "입력 완료", Toast.LENGTH_SHORT).show()
+
+            //댓글 추가하면 새로고침
+            finish() //인텐트 종료
+            overridePendingTransition(0, 0) //인텐트 효과 없애기
+            val intent = intent //인텐트
+            startActivity(intent) //액티비티 열기
+            overridePendingTransition(0, 0) //인텐트 효과 없애기
+
+        }
 
     }
 

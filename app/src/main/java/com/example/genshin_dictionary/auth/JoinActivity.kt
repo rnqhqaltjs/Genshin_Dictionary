@@ -51,7 +51,7 @@ class JoinActivity : AppCompatActivity() {
                 isGoToJoin = false
             }
 
-            if (!password1.equals(password2)) {
+            if (password1 != password2) {
                 Toast.makeText(this, "비밀번호가 서로 달라요.", Toast.LENGTH_SHORT).show()
                 isGoToJoin = false
             }
