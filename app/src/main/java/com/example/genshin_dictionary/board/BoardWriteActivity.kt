@@ -27,6 +27,7 @@ class BoardWriteActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.writeBtn.setOnClickListener {
+
             val title = binding.titleArea.text.toString()
             val content = binding.contentArea.text.toString()
             val uid = FBAuth.getUid()
@@ -42,7 +43,9 @@ class BoardWriteActivity : AppCompatActivity() {
             Toast.makeText(this,"부적절한 게시글일 경우 삭제될 수 있습니다.", Toast.LENGTH_LONG).show()
 
             if(isImageUpload){
+
                 imageUpload(key)
+
             }
 
             finish()

@@ -137,6 +137,7 @@ class BookmarkFragment : Fragment() {
             }
         }
         FBRef.bookmarkRef.child(FBAuth.getUid()).addValueEventListener(postListener)
+
     }
 
 }

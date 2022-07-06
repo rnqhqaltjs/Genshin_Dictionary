@@ -103,6 +103,12 @@ class BoardInsideActivity : AppCompatActivity() {
 
         } else {
 
+            var email = FBAuth.getEmail()
+
+            if (email == "") {
+                email = "익명"
+            }
+
             FBRef
                 .commentRef
                 .child(key)
@@ -112,7 +118,7 @@ class BoardInsideActivity : AppCompatActivity() {
                         binding.commentArea.text.toString(),
                         FBAuth.getTime(),
                         FBAuth.getUid(),
-                        FBAuth.getEmail()
+                        email
                     )
                 )
 
