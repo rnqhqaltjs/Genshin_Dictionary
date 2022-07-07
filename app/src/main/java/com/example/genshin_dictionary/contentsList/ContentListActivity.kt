@@ -42,29 +42,43 @@ class ContentListActivity : AppCompatActivity() {
         val category = intent.getStringExtra("category")
 
         if(category=="category_all"){
-            myRef = database.getReference("contents_all")
 
+            myRef = database.getReference("contents_all")
+            binding.text.text = "전체 보기"
 
         }else if(category=="category_newbie"){
+
             myRef = database.getReference("contents_newbie")
+            binding.text.text = "초보자 가이드"
 
         }else if(category=="category_battle"){
+
             myRef = database.getReference("contents_battle")
+            binding.text.text = "전투 정보"
 
         }else if(category=="category_quest"){
+
             myRef = database.getReference("contents_quest")
+            binding.text.text = "퀘스트 정보"
 
         }else if(category=="category_farm"){
             myRef = database.getReference("contents_farm")
+            binding.text.text = "파밍 정보"
 
         }else if(category=="category_arc"){
             myRef = database.getReference("contents_arc")
+            binding.text.text = "업적"
+
 
         }else if(category=="category_tip"){
+
             myRef = database.getReference("contents_tip")
+            binding.text.text = "공략 팁"
 
         }else if(category=="category_etc"){
+
             myRef = database.getReference("contents_etc")
+            binding.text.text = "기타 정보"
 
         }
 
