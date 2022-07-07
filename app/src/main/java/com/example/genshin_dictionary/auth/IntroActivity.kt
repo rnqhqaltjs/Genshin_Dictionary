@@ -41,7 +41,7 @@ class IntroActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
 
-                        Toast.makeText(this,"비회원은 글 작성이 불가능합니다.",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this,"Guest 님 환영합니다.",Toast.LENGTH_SHORT).show()
 
                         val intent = Intent(this, MainActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
