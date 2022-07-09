@@ -1,2 +1,3 @@
-# Genshin_Dictionary
+# 원신 백과사전
 
+## 원신 백과사전 개요
